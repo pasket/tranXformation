@@ -94,10 +94,10 @@ tranformatations:
 
   - column: Full_Name
     operator: split_into_columns
-    separator: '/'
+    separator: ' '
     destination_columns:
-      - Subsidiary
-      - Country
+      - First Name
+      - Last Name
 
   - column: Name
       operation: rename_column
