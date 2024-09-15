@@ -58,7 +58,7 @@ python tranXformation.py --help
 ```
 
 <pre>
-Usage: tranXformation.py [options] parameter
+Usage: tranXformation.py [options] input_file_excel_or_csv
 
 Options:
   -h, --help            show this help message and exit

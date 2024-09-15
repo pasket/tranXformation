@@ -40,7 +40,8 @@ def parse_arguments(arguments):
     """
 
     # Create an OptionParser object
-    parser = optparse.OptionParser(usage="usage: %prog [options] parameter")
+    parser = optparse.OptionParser(
+        usage="usage: %prog [options] input_file_excel_or_csv")
 
     parser.add_option(
         '-f', '--format',
