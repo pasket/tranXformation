@@ -138,6 +138,39 @@ summaries:
 
 ```
 
+## Windows Users (no developers)
+
+Bundled binary version of the application for Windows is provided to prevent script users from needing to install Python and its libraries.
+
+### User Instruction
+
+#### 1. Copy executable
+
+Copy the executable `tranXforamtion.exe` located in the `dist` folder to a folder of your choice. For example, create a folder named **tranXformation** on your desktop and copy the .exe file there.
+
+#### 2. Add Configuration File
+
+You can place the configuration file `config.yml` in the same directory, and it will be used by default. Alternatively, you can use other configuration files and specify them with the -c option.
+
+#### 3. Terminal Usage (CMD)
+
+Open a terminal or command prompt (`CMD`). Navigate to the directory and run the executable.
+
+### Developer Instructions
+
+The bundle version is located in the `dist` directory and was created using the following command on a Windows system:
+
+#### 1. Install PyInstaller
+
+```bash
+pip install pyinstaller
+```
+
+#### 2. Create the Executable
+
+```bash
+pyinstaller --onefile --icon=images\tranXformation-logo.ico tranXformation.py
+```
 
 ## Setup Instructions
 
