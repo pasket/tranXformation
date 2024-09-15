@@ -141,7 +141,7 @@ summaries:
 
 ## Setup Instructions
 
-### 1. Create and Activate a Virtual Environment
+#### 1. Create and Activate a Virtual Environment
 
 It is recommended to use a virtual environment to keep the dependencies isolated.
 
@@ -163,7 +163,7 @@ It is recommended to use a virtual environment to keep the dependencies isolated
     source venv/bin/activate
     ```
 
-### 2. Install Dependencies
+#### 2. Install Dependencies
 
 Once the virtual environment is activated, install the required dependencies listed in the requirements.txt file:
 
@@ -173,7 +173,7 @@ pip install -r requirements.txt
 
 This will install all the necessary libraries to run tranXformation.
 
-### 3. Deactivate the Virtual Environment
+#### 3. Deactivate the Virtual Environment
 
 When you're done working, you can deactivate the virtual environment by simply running:
 
