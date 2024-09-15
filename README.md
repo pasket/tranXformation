@@ -49,7 +49,7 @@ Available options:
 The filter is used to incorporate customization into the grouping.
 
 
-### 4. Usage Instructions
+## Usage Instructions
 
 The usage instructions are available in the help section. To access them, run the following command:
 
@@ -76,7 +76,8 @@ Options:
                         Path to the configuration file
 </pre>
 
-### 5. Configuration File
+
+## Configuration File
 
 > **Note:** Copy the cofiguration template and remove the ".template" suffix. Manage multiple configuration files and specify what to use in command parameter (-c).
 
