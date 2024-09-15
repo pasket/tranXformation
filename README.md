@@ -98,6 +98,7 @@ The usage instructions are available in the help section. To access them, run th
 python tranXformation.py --help
 ```
 
+<pre>
 Usage: tranXformation.py [options] parameter
 
 Options:
@@ -114,7 +115,7 @@ Options:
                         CRITICAL)
   -c FILE, --config=FILE
                         Path to the configuration file
-
+</pre>
 
 ### 5. Configuration File
 

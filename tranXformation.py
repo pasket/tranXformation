@@ -167,7 +167,7 @@ def process_summaries_and_save_excel(df, output_file, summaries):
 
         if len(summary['groupby']) == 1:
 
-            # Count occurrences of each severity level
+            # Count occurrences of each item level
             counts = df[summary['groupby'][0]].value_counts()
             percentages = (counts / counts.sum()) * 100
 
@@ -206,13 +206,14 @@ def process_summaries_and_save_excel(df, output_file, summaries):
             for r in dataframe_to_rows(grouped, index=True, header=True):
                 ws_data.append(r)
 
-            # Loop through each subsidiary to create a pie chart
+            # Loop through each subgroup to create a pie chart
             for i, subgroup in enumerate(grouped.index, start=3):
 
                 # Create chart
                 chart = PieChart()
                 chart.style = 2
-                chart.title = f"Severity Distribution for {subgroup}"
+                chart.title = ("%s for %s" % (
+                    str(summary['title']), str(subgroup)))
 
                 # Define the data and labels for the chart
                 data_ref = Reference(ws_data, min_col=2, min_row=i, max_col=len(
@@ -472,10 +473,6 @@ def main():
     # print("\nSample (10 lines):\n")
     # print(df.head(10))
     print()
-
-    # specific_columns = ['Number', 'Subsidiary', 'Country', 'new_data', 'Subsidiary_tranXformation_orig']  # Columns you want to display
-    # top_10_df = df[specific_columns].head(10)
-    # print(top_10_df)
 
 
 if __name__ == "__main__":
