@@ -2,9 +2,9 @@
 
 tranXformation allows you to define a simple playbook of transformations on a CSV or Excel document. Often, repetitive and tedious tasks need to be performed, which, although Excel can handle, may not always be practical. tranXformation was primarily developed to split cells into multiple rows, for example, when a cell contains several comma-separated values, and to move information between columns based on various parameters.
 
-<div style="text-align: center;">
+<p align="center">
   <img src="images/tranXformation-logo.jpeg" alt="tranXformation" width="300"/>
-</div>
+</p>
 
 ## TranXformation Operations
 
@@ -14,7 +14,7 @@ tranXformation allows you to define a simple playbook of transformations on a CS
 
 The `explode_into_rows` operator is used to transform each element of a list-like column into a separate row, replicating the rest of the columns as needed. This is especially useful when you have a column where each row contains multiple values (e.g., a list or a set), and you want to "unpack" those values into individual rows.
 
-#### Split
+### Split
 
 ##### Operator: "split_into_columns"
 
