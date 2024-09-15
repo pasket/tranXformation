@@ -1,0 +1,51 @@
+# Transformation occurs in order
+
+tranformatations:
+
+  - column: Name
+    operation: explode_into_rows
+    separator: ','
+
+  - column: Full_Name
+    operator: split_into_columns
+    separator: '/'
+    destination_columns:
+      - Subsidiary
+      - Country
+
+  - column: Name
+      operation: rename_column
+      renamed_column_name: 'First Name'
+
+  - column: new_data
+    operation: create_column
+    generate_random: True
+
+  - column: Boy_or_Girl
+    operation: conditional_tagging
+    destination_column: Genre
+    conditions:
+      - if_value: 'Boy'
+        set: Male
+      - if_value: 'Girl'
+        set: Female
+      - else: 'Not Classified'
+
+summaries:
+
+  - title: Genre Distribution
+    groupby:
+      - Genre
+
+  - title: Genre and First Name Distribution
+    groupby:
+      - Genre
+      - First Name
+
+  - title: Genre Distribution but no First Name Jhon
+    filter: 
+      column: 'First Name'
+      operator: '!='
+      value: 'Jhon'
+    groupby:
+      - Genre
