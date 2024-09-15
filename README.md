@@ -172,7 +172,7 @@ pip install pyinstaller
 pyinstaller --onefile --icon=images\tranXformation-logo.ico tranXformation.py
 ```
 
-## Setup Instructions
+## Setup Instructions (Developers or MacOS / Linux Users)
 
 #### 1. Create and Activate a Virtual Environment
 
