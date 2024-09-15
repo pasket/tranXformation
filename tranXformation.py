@@ -319,7 +319,7 @@ def apply_condition(row, column_name, destination_column_name, conditions):
         if 'else' in c:
             return c['else']
 
-        return row[destination_column_name]
+    return row[destination_column_name]
 
 
 def main():
