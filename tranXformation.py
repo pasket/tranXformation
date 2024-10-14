@@ -396,10 +396,31 @@ def main():
 
             elif tr['operation'].lower() == 'split_into_columns':
                 # Split and complete into columns
-                logging.info("Split column '%s' into columns %s by separator '%s'" % (
+                if 'pattern' in tr:
+                    # separator an pattern are equivalent
+                    tr['separator'] = tr['pattern']
+
+                logging.info("Split column '%s' into columns %s by separator or pattern '%s'" % (
                     column_name, tr['destination_columns'], tr['separator']))
-                df[tr['destination_columns']] = df[column_name].str.split(
-                    tr['separator'], expand=True)
+
+                regex = False
+                if 'regex' in tr:
+                    regex = tr['regex']
+
+                n = None
+                if 'num_splits' in tr:
+                    n = tr['num_splits']
+
+                aux = df[column_name].str.split(
+                    tr['separator'], n=n, regex=regex, expand=True)
+
+                for c in tr['destination_columns']:
+                    df[c] = None
+
+                for i, c in enumerate(tr['destination_columns']):
+                    if i in aux:
+                        df[c] = aux[i]
+
                 df[column_name] = df[column_name].astype(str)
                 df[column_name] = df[column_name].str.strip()
 

@@ -20,6 +20,10 @@ The `explode_into_rows` operator is used to transform each element of a list-lik
 
 The `split_into_columns` operator is ofen used to split a string from a column into multiple columns based on a delimiter. This is particularly useful when dealing with data where a single column contains concatenated values that need to be separated into distinct columns.
 
+Optional parameters:
+  * `num_splits`: int - Limits number of splits in output.
+  * `regex`: bool - Assumes the passed-in separator or pattern (both are equivalent) is a regular expression
+
 ### Rename
 
 ##### Operator: "rename_column"
@@ -95,9 +99,18 @@ tranformatations:
   - column: Full_Name
     operator: split_into_columns
     separator: ' '
+    num_splits: 3
     destination_columns:
       - First Name
       - Last Name
+      - Middle Name
+
+  - column: Code
+    operator: split_into_columns
+    pattern: '\s*,(\d)\s*(?=[A-Z])'
+    destination_columns:
+      - data1
+      - data2
 
   - column: Name
       operation: rename_column
